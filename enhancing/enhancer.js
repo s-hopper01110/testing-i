@@ -1,3 +1,6 @@
+//logic holds if/else statements.. 
+
+
 module.exports = {
   succeed,
   fail,
