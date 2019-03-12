@@ -38,7 +38,30 @@ describe('succeed()', () => {
 // - If the item's enhancement is 15 or more, the durability of the item is decreased by 10.
 // - If the item's enhancement level is greater than 16, the enhancement level decreases by 1 (17 goes down to 16, 18 goes down to 17).
 
-
+describe('fail()', () => {
+    it('decreases by 5', () => {
+        const item = {
+            durability: 100,
+            enhancement: 14
+        }
+        expect(fail(item).durability).toBe(95)
+    })
+    it('durability decreases by 10', () => {
+        const item = {
+            durability: 50,
+            enhancement: 15
+        }
+        expect(fail(item).durability).toBe(40)
+    })
+    it('enhancement decreases by 1', () => {
+        const item = {
+            durability: 20,
+            enhancement: 16
+        }
+        expect(fail(item).enhancement).toBe(15)
+        expect(fail(item).durability).toBe(10)
+    })
+ })
 
 
 
